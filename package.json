@@ -1,0 +1,16 @@
+{
+  "name": "lpo-maker",
+  "version": "1.0.0",
+  "description": "Local Purchase Order maker: build an order, track goods received, download a PDF. No login, no server database.",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "sample": "node scripts/make-sample.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "jspdf": "^4.2.1"
+  }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LPO Maker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>LPO Maker</h1>
+    <p>Local Purchase Orders in BHD. Data stays in this browser.</p>
+  </header>
+  <main class="layout">
+    <aside class="panel" aria-label="Orders">
+      <div class="panel-head">
+        <h2>Orders</h2>
+        <button id="new-order" class="primary" type="button">New order</button>
+      </div>
+      <ul id="order-list" class="order-list"></ul>
+    </aside>
+    <section id="main" class="panel" aria-live="polite"></section>
+  </main>
+  <script src="vendor/jspdf.umd.min.js"></script>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
