@@ -243,6 +243,8 @@ $main.addEventListener("input", (e) => {
 $main.addEventListener("click", (e) => {
   const btn = e.target.closest("[data-action]");
   if (!btn) return;
+  // Re-read storage so a change made in another tab is never overwritten.
+  orders = loadOrders();
   const order = selected && byNumber(selected);
   switch (btn.dataset.action) {
     case "add-line":
@@ -290,6 +292,8 @@ $main.addEventListener("click", (e) => {
 $main.addEventListener("submit", (e) => {
   e.preventDefault();
   const form = e.target;
+  // The number is taken from the freshest stored orders, in the same synchronous step as the save.
+  orders = loadOrders();
   if (form.id === "order-form") {
     run(() => {
       const input = readForm();
